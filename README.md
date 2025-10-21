@@ -1,67 +1,144 @@
-# <p align="center">Jitsi Meet</p>
-
-Jitsi Meet is a set of Open Source projects which empower users to use and deploy
-video conferencing platforms with state-of-the-art video quality and features.
-
-<hr />
+# <p align="center">ECHO-FIVE-MEET</p>
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/jitsi/jitsi-meet/master/readme-img1.png" width="900" />
+  <strong>Customized Video Conferencing Platform for Educational Institutions</strong>
+</p>
+
+<p align="center">
+  A specialized Jitsi Meet implementation designed for parent-teacher meetings and classroom sessions.
 </p>
 
 <hr />
 
-Amongst others here are the main features Jitsi Meet offers:
+## 📋 About ECHO-FIVE-MEET
 
-* Support for all current browsers
-* Mobile applications
-* Web and native SDKs for integration
-* HD audio and video
-* Content sharing
-* Raise hand and reactions
-* Chat with private conversations
-* Polls
+ECHO-FIVE-MEET is a customized video conferencing solution built on Jitsi Meet, specifically tailored for educational environments. It provides a streamlined interface for teachers and parents to conduct virtual meetings with enhanced privacy and simplified workflows.
+
+<hr />
+
+## ✨ Key Features
+
+### Custom Role-Based Access
+* **Teacher Role**: Create and manage parent-teacher meetings or class sessions
+* **Parent Role**: Join meetings via auto-generated meeting IDs
+* Streamlined meeting creation workflow
+* Two meeting types: Parent-Teacher Meeting and Class Meeting
+
+### Core Video Conferencing Features
+* HD audio and video quality
+* Screen sharing and content presentation
+* Real-time chat with private conversations
+* Raise hand and emoji reactions
 * Virtual backgrounds
+* Polls and interactive features
+* Cross-platform support (Web, Android, iOS)
 
-And many more!
+### Branding & Customization
+* Jitsi watermark removed
+* Custom ECHO-FIVE branding
+* Tailored user interface for education
 
-## Using Jitsi Meet
+## 🚀 Quick Start
 
-Using Jitsi Meet is straightforward, as it's browser based. Head over to [meet.jit.si](https://meet.jit.si) and give it a try. It's scalable and free to use. All you need is a Google, Facebook or GitHub account in order to start a meeting. All browsers are supported!
+### For Teachers:
+1. Open the ECHO-FIVE-MEET application
+2. Click **CREATE** button
+3. Select your role: **Teacher**
+4. Choose meeting type:
+   - Parent-Teacher Meeting
+   - Class Meeting
+5. Meeting ID is auto-generated
+6. Share the meeting link with parents
 
-Using mobile? No problem, you can either use your mobile web browser or our fully-featured
-mobile apps:
+### For Parents:
+1. Open the ECHO-FIVE-MEET application
+2. Click **JOIN** button
+3. Select your role: **Parent**
+4. Paste the meeting link received from the teacher
+5. Join the meeting
 
-| Android | Android (F-Droid) | iOS |
-|:-:|:-:|:-:|
-| [<img src="resources/img/google-play-badge.png" height="50">](https://play.google.com/store/apps/details?id=org.jitsi.meet) | [<img src="resources/img/f-droid-badge.png" height="50">](https://f-droid.org/packages/org.jitsi.meet/) | [<img src="resources/img/appstore-badge.png" height="50">](https://itunes.apple.com/us/app/jitsi-meet/id1165103905) |
+### Supported Platforms:
+* **Web**: All modern browsers (Chrome, Firefox, Safari, Edge)
+* **Android**: Native Android application
+* **iOS**: Native iOS application
+* **React Native SDK**: For mobile app integration
 
-If you are feeling adventurous and want to get an early scoop of the features as they are being
-developed you can also sign up for our open beta testing here:
+## 🛠️ Installation & Setup
 
-* [Android](https://play.google.com/apps/testing/org.jitsi.meet)
-* [iOS](https://testflight.apple.com/join/isy6ja7S)
+### Prerequisites
+* Node.js >= 22.0.0
+* npm >= 10.0.0
+* Make (for build commands)
 
-## Running your own instance
+### Clone the Repository
+```bash
+git clone https://github.com/tharunkamalesh/meet-echo-five.git
+cd meet-echo-five
+```
 
-If you'd like to run your own Jitsi Meet installation head over to the [handbook](https://jitsi.github.io/handbook/docs/devops-guide/) to get started.
+### Install Dependencies
+```bash
+npm install
+```
 
-We provide Debian packages and a comprehensive Docker setup to make deployments as simple as possible.
-Advanced users also have the possibility of building all the components from source.
+### Development Mode
+```bash
+make dev
+```
+The development server will start at `http://localhost:8080`
 
-You can check the latest releases [here](https://jitsi.github.io/handbook/docs/releases).
+### Production Build
+```bash
+make all
+```
 
-## Jitsi as a Service
+### Windows Users
+For easier setup on Windows, use the provided batch files:
+```cmd
+COMPLETE-SETUP-AND-RUN.bat
+```
+or
+```cmd
+RUN-ECHO-FIVE-MEET.bat
+```
 
-If you like the branding capabilities of running your own instance but you'd like
-to avoid dealing with the complexity of monitoring, scaling and updates, JaaS might be
-for you.
+## 🏗️ Project Structure
 
-[8x8 Jitsi as a Service (JaaS)](https://jaas.8x8.vc) is an enterprise-ready video meeting platform that allows developers, organizations and businesses to easily build and deploy video solutions. With Jitsi as a Service we now give you all the power of Jitsi running on our global platform so you can focus on building secure and branded video experiences.
+```
+echo-five-meeting/
+├── react/              # React components and features
+├── css/                # SCSS stylesheets
+├── modules/            # API, UI, and transport modules
+├── lang/               # Internationalization files
+├── android/            # Android mobile app
+├── ios/                # iOS mobile app
+├── react-native-sdk/   # React Native SDK
+├── sounds/             # Audio assets
+├── images/             # Image assets
+├── static/             # Static HTML files
+├── resources/          # Additional resources
+├── patches/            # Dependency patches
+├── tests/              # Test files
+├── config.js           # Jitsi configuration
+├── interface_config.js # UI configuration
+├── webpack.config.js   # Webpack configuration
+└── package.json        # Project dependencies
+```
 
-## Documentation
+## 📚 Technology Stack
 
-All the Jitsi Meet documentation is available in [the handbook](https://jitsi.github.io/handbook/).
+* **Frontend**: React 18, TypeScript 5.7.2
+* **Mobile**: React Native 0.77.2
+* **Build Tools**: Webpack 5, Babel 7
+* **Styling**: SCSS, Emotion
+* **State Management**: Redux
+* **UI Components**: Material UI
+* **Video/Audio**: WebRTC, lib-jitsi-meet
+* **AI Features**: TensorFlow.js (virtual backgrounds, noise suppression)
+
+## 📖 Documentation
+
+For detailed Jitsi Meet documentation, visit [the Jitsi handbook](https://jitsi.github.io/handbook/).
 
 ## Security
 
@@ -72,16 +149,32 @@ please check [this link](https://jitsi.org/e2ee-whitepaper/).
 
 For information on reporting security vulnerabilities in Jitsi Meet, see [SECURITY.md](./SECURITY.md).
 
-## Contributing
+## 🔐 Security
 
-If you are looking to contribute to Jitsi Meet, first of all, thank you! Please
-see our [guidelines for contributing](CONTRIBUTING.md).
+For security information and vulnerability reporting, please see [SECURITY.md](./SECURITY.md).
 
-<br />
-<br />
+For End-to-End Encryption (E2EE) details, check [Jitsi's E2EE whitepaper](https://jitsi.org/e2ee-whitepaper/).
 
-<footer>
-<p align="center" style="font-size: smaller;">
-Built with ❤️ by the Jitsi team at <a href="https://8x8.com" target="_blank">8x8</a> and our community.
+## 📝 License
+
+This project is based on Jitsi Meet and follows the same licensing terms. See [LICENSE](./LICENSE) for details.
+
+## 🙏 Acknowledgments
+
+ECHO-FIVE-MEET is built on top of [Jitsi Meet](https://github.com/jitsi/jitsi-meet), an open-source project by the Jitsi team at [8x8](https://8x8.com).
+
+## 📞 Support
+
+For issues and questions:
+* Create an issue on [GitHub Issues](https://github.com/tharunkamalesh/meet-echo-five/issues)
+* Refer to the [Jitsi Community](https://community.jitsi.org/) for general Jitsi Meet questions
+
+---
+
+<p align="center">
+  <strong>ECHO-FIVE-MEET</strong> - Empowering Education Through Connected Communication
 </p>
-</footer>
+
+<p align="center">
+  Built with ❤️ for educators, parents, and students
+</p>
