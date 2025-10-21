@@ -1,0 +1,6 @@
+import { ExcalidrawElement } from "./element/types";
+import { AppState } from "./types";
+export declare const moveOneLeft: (elements: readonly ExcalidrawElement[], appState: AppState) => (import("./types").ExcalidrawLinearElement | import("./types").ExcalidrawSelectionElement | import("./types").ExcalidrawRectangleElement | import("./types").ExcalidrawDiamondElement | import("./types").ExcalidrawEllipseElement | import("./types").ExcalidrawImageElement | import("./types").ExcalidrawTextElement | import("./types").ExcalidrawFreeDrawElement)[];
+export declare const moveOneRight: (elements: readonly ExcalidrawElement[], appState: AppState) => (import("./types").ExcalidrawLinearElement | import("./types").ExcalidrawSelectionElement | import("./types").ExcalidrawRectangleElement | import("./types").ExcalidrawDiamondElement | import("./types").ExcalidrawEllipseElement | import("./types").ExcalidrawImageElement | import("./types").ExcalidrawTextElement | import("./types").ExcalidrawFreeDrawElement)[];
+export declare const moveAllLeft: (elements: readonly ExcalidrawElement[], appState: AppState) => readonly ExcalidrawElement[];
+export declare const moveAllRight: (elements: readonly ExcalidrawElement[], appState: AppState) => readonly ExcalidrawElement[];
