@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "name": "echo-five-meet",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "libs"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/external_api.js",
+      "dest": "/libs/external_api.js"
+    },
+    {
+      "src": "/external_api.min.js",
+      "dest": "/libs/external_api.min.js"
+    },
+    {
+      "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|json|mp3|opus|wav))",
+      "dest": "/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    }
+  }
+}
