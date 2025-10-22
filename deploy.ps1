@@ -9,6 +9,33 @@ if (!(Test-Path libs)) {
     Write-Host "Created libs directory" -ForegroundColor Yellow
 }
 
+# Try to build the main application bundles
+Write-Host "Attempting to build application bundles..." -ForegroundColor Yellow
+try {
+    # Try to run the build script which uses make
+    npm run build 2>$null
+    if ($LASTEXITCODE -eq 0) {
+        Write-Host "Build completed successfully!" -ForegroundColor Green
+        # Copy built files to libs directory
+        if (Test-Path "build\app.bundle.min.js") {
+            Copy-Item "build\app.bundle.min.js" "libs\" -Force
+        }
+        if (Test-Path "build\app.bundle.min.js.map") {
+            Copy-Item "build\app.bundle.min.js.map" "libs\" -Force
+        }
+        if (Test-Path "build\external_api.min.js") {
+            Copy-Item "build\external_api.min.js" "libs\" -Force
+        }
+        if (Test-Path "build\external_api.min.js.map") {
+            Copy-Item "build\external_api.min.js.map" "libs\" -Force
+        }
+    } else {
+        Write-Host "Build failed, continuing with manual deployment..." -ForegroundColor Yellow
+    }
+} catch {
+    Write-Host "Build failed, continuing with manual deployment..." -ForegroundColor Yellow
+}
+
 # Copy lib-jitsi-meet files
 Write-Host "Copying lib-jitsi-meet files..." -ForegroundColor Yellow
 Copy-Item "node_modules\lib-jitsi-meet\dist\umd\*" "libs\" -Force
