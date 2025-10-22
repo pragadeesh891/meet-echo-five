@@ -217,6 +217,7 @@
     "validate": "npm ls",
     "start": "make dev",
     "vercel-build": "make",
+    "build": "make",
     "test": "DOTENV_CONFIG_PATH=tests/.env wdio run tests/wdio.conf.ts",
     "test-single": "DOTENV_CONFIG_PATH=tests/.env wdio run tests/wdio.conf.ts --spec",
     "test-ff-single": "DOTENV_CONFIG_PATH=tests/.env wdio run tests/wdio.firefox.conf.ts --spec",
